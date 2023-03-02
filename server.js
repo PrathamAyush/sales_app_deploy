@@ -31,9 +31,9 @@ app.use(require("./routes/user_route"))
 app.use(require("./routes/sales_route"))
 
 //requiring static page for deployement
-app.use(express.static(path.join(__dirname, "../client/build")))
+app.use(express.static(path.join(__dirname, "./client/build")))
 app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../client/build/index.html"))
+    res.sendFile(path.join(__dirname, "./client/build/index.html"))
 })
 
 //For testing perpose
