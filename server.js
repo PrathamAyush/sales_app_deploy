@@ -30,6 +30,7 @@ require("./models/sales_model")
 app.use(require("./routes/user_route"))
 app.use(require("./routes/sales_route"))
 
+
 //requiring static page for deployement
 app.use(express.static(path.join(__dirname, "./client/build")))
 app.get("*", (req, res) => {

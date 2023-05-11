@@ -30,7 +30,7 @@ router.post("/", authMiddleware, (req, res) => {
 router.get("/topSales", authMiddleware, (req, res) => {
     sales.find({ author: req.user._id })
         .populate("author", "_id productName quantity amount")
-        .sort({ quantity: -1 })
+        .sort({ amount: -1 })
         .limit(5)
         .then((topsales) => {
             res.status(200).json({ sales: topsales })
